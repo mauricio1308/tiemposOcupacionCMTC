@@ -10,14 +10,14 @@
 #'
 #'@export
 
-tiemposOcupacionCMTC <- function(matrizQ,t,alpha){
+matrizOcupacionCMTC <- function(matrizQ,t,alpha){
   library(markovchain)
   L <- -1/diag(matrizQ)
   matrizP <- generatorToTransitionMatrix(matrizQ)
   matrizMultiplicar <- matrizP
   contador <- 1
   valorEsperadoTiempo <- alpha%*%L
-  
+
   while(valorEsperadoTiempo<t){
     contador=contador + 1
     valorEsperadoTiempo <- valorEsperadoTiempo +alpha%*%matrizMultiplicar%*%L
@@ -26,13 +26,13 @@ tiemposOcupacionCMTC <- function(matrizQ,t,alpha){
   }
   print(paste0(contador,"------",valorEsperadoTiempo))
   matrizOcupacion <- diag(nrow(matrizQ)) + matrizP
-  resultado <- matrizP 
-  
+  resultado <- matrizP
+
   for(i in 2:(contador-1)){
     resultado <- resultado%*%matrizP
     matrizOcupacion <- matrizOcupacion + resultado
   }
-  
+
   M_t <- matrizOcupacion*L
   return(M_t)
 }

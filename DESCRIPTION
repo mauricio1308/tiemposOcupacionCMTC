@@ -1,0 +1,15 @@
+Package: tiemposOcupacionCMTC
+Title: Calcular la aproximación de la matriz de ocupación para una CMTC a través de la cadena embebida.
+Version: 0.0.0.9000
+Authors@R: person("Modelos Probabilísticos", "Universidad de los Andes", email = "modelos_inst@uniandes.edu.co", 
+  role = c("aut", "cre"))
+  person("Mauricio", "Delgado", email = "mr.delgado@uniandes.edu.co", 
+  role = c("aut", "cre"))
+Description: Este paquete permite calcular la aproximación de la matriz de ocupación para una cadena de markov de tiempo continuo a través de la cadena embebida.
+License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
+    license
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.1
+Imports:
+        markovchain

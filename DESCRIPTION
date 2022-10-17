@@ -13,3 +13,5 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.1
 Imports:
         markovchain
+URL: https://github.com/mauricio1308/tiemposOcupacionCMTC
+BugReports: https://github.com/mauricio1308/tiemposOcupacionCMTC/issues

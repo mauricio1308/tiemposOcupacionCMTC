@@ -10,7 +10,7 @@
 #'
 #'@export
 
-matrizOcupacionCMTC <- function(matrizQ,t,alpha){
+matOcupacionCMTC <- function(matrizQ,t,alpha){
   library(markovchain)
   L <- -1/diag(matrizQ)
   matrizP <- generatorToTransitionMatrix(matrizQ)
@@ -33,6 +33,6 @@ matrizOcupacionCMTC <- function(matrizQ,t,alpha){
     matrizOcupacion <- matrizOcupacion + resultado
   }
 
-  M_t <- matrizOcupacion*L
+  M_t <- alpha%*%matrizOcupacion*L
   return(M_t)
 }
